@@ -4,7 +4,7 @@ maintainer_email 'maurice.k@zend.com'
 license          'All rights reserved'
 description      'Installs/Configures zendserver'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.8.0'
+version          '1.0.0'
 
 depends "apt"
 depends "yum"
@@ -16,6 +16,15 @@ recipe "zendserver::cluster", "Install, bootstrap and create/join a cluster in 1
 recipe "zendserver::manage", "Manages zend server, typically no direct actions"
 recipe "zendserver::bootstrapsingle", "Bootstraps the server in single server mode"
 recipe "zendserver::joincluster", "Join a Zend Server Cluster"
+
+attribute "zendserver/url",
+  :display_name => "Zend Server Base repo URL",
+  :description => "The URL of the repo",
+  :required => "optional",
+  :default => "http://repos.zend.com/zend-server/",
+  :recipes => [ 
+      "zendserver::install"
+  ]
 
 attribute "zendserver/version",
   :display_name => "Zend Server version",

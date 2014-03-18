@@ -1,6 +1,11 @@
 default['zendserver']['ext_conf_dir']  = '/usr/local/zend/etc/conf.d/'
 default['zendserver']['zsmanage']  = '/usr/local/zend/bin/zs-manage'
 
+#URL needs to have trailing slash
+default['zendserver']['url'] = 'http://repos.zend.com/zend-server/'
+default['zendserver']['basedirdeb'] = 'deb'
+default['zendserver']['basedirrpm'] = 'rpm'
+
 default['zendserver']['version'] = '6.1'
 default['zendserver']['phpversion'] = '5.4'
 
