@@ -69,6 +69,7 @@ when "suse"
    	title "zend-server-#{version}"
 	action :add
   end
+  
   zypper_repository "zend-server-noarch" do
 	uri "http://repos.zend.com/zend-server/#{version}/sles/ZendServer-noarch"
 	key "http://repos.zend.com/zend.key"
